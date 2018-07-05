@@ -52,7 +52,9 @@ body{
   font-size: 16px;
   margin-top: 10px;
 }
-
+.active-tab {
+  display: inherit;
+}
 .what-doing__content{
   margin-top: 64px;
   padding: 60px 90px 650px 90px;
@@ -121,9 +123,20 @@ body{
 
 /*========== what-doing__text-section ===========*/
 .what-doing__text{
+  display: none;
   margin-top: 105px;
 }
+
+
+.what-doing__text.active-tab{
+  display: initial;
+}
+
 .what-doing__text-section{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   &+&{
     margin-top: 73px;
   }
@@ -138,6 +151,7 @@ body{
     position: absolute;
     right: -14px;
     top: -58px;
+    margin-top: 5%;
   }
 }
 
@@ -200,6 +214,7 @@ body{
     position: absolute;
     left: 0;
     top: -50px;
+    margin-top: 5%;
   }
 }
 

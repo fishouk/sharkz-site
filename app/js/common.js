@@ -374,61 +374,72 @@ $(document).ready(function(){
     var ParralaxTimeAnimation = 500;
     var parralaxScrollAnimation = false;
     var parralaxScrollAnimationTop = false;
-    $(window).scroll( function () {
-        var scrollSize = (scrollTop - $(window).scrollTop());
-        if(scrollSize < 0){
-            scrollSize = -scrollSize;
-        }
-        var scrollHeight = $(window).height();
-        var pageTopMarginBottom = pageTop.css('margin-bottom');
-        var pageTopPosition = document.querySelector('.js-page-top').getBoundingClientRect();
-        if(scrollTop < $(window).scrollTop()){
-            if((pageTopPosition.bottom - 1) <= scrollHeight && parralaxScrollAnimation === false){
-                if(pageTopPosition.bottom > 0){
-                    parralaxScrollAnimation = true;
-                    parralaxScrollAnimationTop = false;
-                    pageTop.css('margin-bottom', scrollHeight + 200 + 'px' );
-                    $('body,html').stop(true).clearQueue().animate({scrollTop: pageBottom.offset().top + scrollHeight}, ParralaxTimeAnimation , function () {
-                        parralaxScrollAnimation = false;
-                    });
-                    return false;
-                }
-                else if(pageTopPosition.bottom <= 0){
-                    //$('body,html').stop(true, true);
-                    pageBottom.css('position', 'static');
-                    pageTop.css('margin-bottom', 0);
-                }
+    if (pageTop.length || pageBottom.length) {
+        $(window).scroll(function () {
+            var scrollSize = (scrollTop - $(window).scrollTop());
+            if (scrollSize < 0) {
+                scrollSize = -scrollSize;
             }
-        }
-        else if(scrollTop > $(window).scrollTop()){
-            var pageBottomPosition = document.querySelector('.js-page-bottom').getBoundingClientRect();
-            if(pageBottomPosition.top >= 0 ){
-                if(parralaxScrollAnimation === false && parralaxScrollAnimationTop === false){
-                    pageBottom.css('position', 'fixed');
-                    if(pageTop.css('margin-bottom') === '0px' ){
+            var scrollHeight = $(window).height();
+            var pageTopMarginBottom = pageTop.css('margin-bottom');
+            var pageTopPosition = document.querySelector('.js-page-top').getBoundingClientRect();
+            if (scrollTop < $(window).scrollTop()) {
+                if ((pageTopPosition.bottom - 1) <= scrollHeight && parralaxScrollAnimation === false) {
+                    if (pageTopPosition.bottom > 0) {
                         parralaxScrollAnimation = true;
-                        parralaxScrollAnimationTop = true;
-                        pageTop.css('margin-bottom', scrollHeight +200 + 'px' );
-                        header.css('display', 'none');
-                        $('body,html').stop(true).clearQueue().animate({scrollTop: pageBottom.offset().top - scrollHeight}, ParralaxTimeAnimation , function () {
+                        parralaxScrollAnimationTop = false;
+                        pageTop.css('margin-bottom', scrollHeight + 200 + 'px');
+                        $('body,html').stop(true).clearQueue().animate({scrollTop: pageBottom.offset().top + scrollHeight}, ParralaxTimeAnimation, function () {
                             parralaxScrollAnimation = false;
-                            header.css({
-                                'display': 'block',
-                                'top': '-83px',
-                                'position': 'fixed'
-                            });
                         });
                         return false;
                     }
-                    if((pageTopPosition.bottom ) >= scrollHeight){
-                        pageTop.css('margin-bottom', '200px' );
+                    else if (pageTopPosition.bottom <= 0) {
+                        //$('body,html').stop(true, true);
+                        pageBottom.css('position', 'static');
+                        pageTop.css('margin-bottom', 0);
                     }
                 }
             }
-        }
-        scrollTop = $(window).scrollTop();
-    })
-
+            else if (scrollTop > $(window).scrollTop()) {
+                var pageBottomPosition = document.querySelector('.js-page-bottom').getBoundingClientRect();
+                if (pageBottomPosition.top >= 0) {
+                    if (parralaxScrollAnimation === false && parralaxScrollAnimationTop === false) {
+                        pageBottom.css('position', 'fixed');
+                        if (pageTop.css('margin-bottom') === '0px') {
+                            parralaxScrollAnimation = true;
+                            parralaxScrollAnimationTop = true;
+                            pageTop.css('margin-bottom', scrollHeight + 200 + 'px');
+                            header.css('display', 'none');
+                            $('body,html').stop(true).clearQueue().animate({scrollTop: pageBottom.offset().top - scrollHeight}, ParralaxTimeAnimation, function () {
+                                parralaxScrollAnimation = false;
+                                header.css({
+                                    'display': 'block',
+                                    'top': '-83px',
+                                    'position': 'fixed'
+                                });
+                            });
+                            return false;
+                        }
+                        if ((pageTopPosition.bottom) >= scrollHeight) {
+                            pageTop.css('margin-bottom', '200px');
+                        }
+                    }
+                }
+            }
+            scrollTop = $(window).scrollTop();
+        })
+    }
     /*======= End of PRRALAX SCRIPT ============*/
 
+    $('.service-tab .item').click(function(){
+        var tab_id = $(this).attr('data-tab');
+
+        $('.service-tab .item').removeClass('active');
+        $('.what-doing__text').removeClass('active-tab');
+
+        $(this).addClass('active');
+        console.log(tab_id);
+        $("#"+tab_id).addClass('active-tab');
+    })
 });

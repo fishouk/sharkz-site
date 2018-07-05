@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-
+    getBoundingClientRect
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,14 +23,16 @@
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png" />
     <!-- / Favicon connection -->
 
-  <!-- Keywords and description of the page -->
-  <meta name="keywords" content="keywords">
-  <meta name="description" content="description">
+    <!-- Keywords and description of the page -->
+    <meta name="keywords" content="keywords">
+    <meta name="description" content="description">
 
-   <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-  <![endif]-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
 
     <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/common.css">
@@ -109,7 +111,7 @@
                             <a href="#" class="icon-be"></a>
                             <a href="#" class="icon-drb"></a>
                         </div>
-                        <div class="mobile_lang">
+                        <div class="mobile_lang">item
                             <label>RU
                                 <input type="radio" name="mobile_lang" checked></label>
                             <span class="lang-delimiter">/</span>
@@ -136,8 +138,8 @@
         </div>
         <div class="container what-doing__content">
             <div class="f_screen-items f_screen-items_services">
-                <div class="item-wrap">
-                    <a href="#" class="item active">
+                <div class="item-wrap service-tab">
+                    <a class="item active" data-tab="design-tab">
                         <i class="icon-men"></i>
                         <p>Дизайн</p>
                         <hr>
@@ -145,8 +147,8 @@
                             Брендринг, Веб-дизайн</small>
                     </a>
                 </div>
-                <div class="item-wrap">
-                    <a href="#" class="item">
+                <div class="item-wrap service-tab">
+                    <a class="item" data-tab="web-tab">
                         <i class="icon-code"></i>
                         <p>ВЕБ-РАЗРАБОТКА</p>
                         <hr>
@@ -154,8 +156,8 @@
                             любой сложности</small>
                     </a>
                 </div>
-                <div class="item-wrap">
-                    <a href="#" class="item">
+                <div class="item-wrap service-tab">
+                    <a class="item" data-tab="seo-tab">
                         <i class="icon-speaker"></i>
                         <p>Продвижение</p>
                         <hr>
@@ -164,8 +166,8 @@
                     </a>
                 </div>
             </div>
-
-            <div class="what-doing__text">
+            <!--========== Design ============-->
+            <div class="what-doing__text active-tab" id="design-tab">
                 <div class="what-doing__text-section what-doing__text-section_left-text">
                     <img src="images/services-text-brending_img.png" alt="" class="what-doing__text-img">
                     <h2 class="section-caption wow fadeInUp2">Брендинг</h2>
@@ -219,6 +221,166 @@
                         <a href="#" class="btn-blue-border btn-blue-border_in-list">Хочу дизайн</a>
                     </p>
                 </div>
+            </div>
+
+            <!--========== Web ============-->
+            <div class="what-doing__text" id="web-tab">
+                <div class="what-doing__text-section what-doing__text-section_left-text">
+                    <img src="images/services-web-pc.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">СОЗДАЕМ АДАПТИВНЫЕ САЙТЫ</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Любой бренд знает, что веб-сайт является их самым важным маркетинговым инструментом. Он может доставлять богатый контент, широкой аудитории за короткий промежуток времени.
+                    </p>
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Поэтому важно обеспечить, чтобы ваш дизайн и разработка сайта были простыми, чистыми и удобными для пользователей.
+                    </p>
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Ваш сайт должен корректно функционировать и правильно отображаться в различных браузерах, что и обеспечат наши программисты и верстальщики.
+                    </p>
+
+                    <a href="#" class="btn-blue-border">Заполнить бриф</a>
+                </div>
+
+                <div class="what-doing__text-section what-doing__text-section_right-text">
+                    <img src="images/services-web-landing.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">ЛЕНДИНГ ПЕЙДЖ</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Заказать landing page (посадочную страницу) необходимо в том случае, если Ваша цель – побуждение посетителей к активным действиям. Это может быть звонок, оформление заказ, использование специальных акционных предложений. При разработке, мы учитываем те цели, которые должны достигаться Вами с использованием посадочной страницы, поэтому тщательно продумываем наличие необходимых побуждающих к действию модулей и призывов.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        В КАКИХ СЛУЧАЯХ НЕОБХОДИМА ПОСАДОЧНАЯ СТРАНИЦА:
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Если Вам нужно в кратчайшие сроки создать платформу для продажи и привлечения новых клиентов
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Если Вы хотите популяризировать один конкретный продукт, создав эксклюзивное предложение для каждого клиента
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Если Вы хотите популяризировать один конкретный продукт, создав эксклюзивное предложение для каждого клиента
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_list">
+                        Цена - <em class="what-doing__paragraph-mark">от 400 $</em>
+
+                        <a href="#" class="btn-blue-border btn-blue-border_in-list">Заказать</a>
+                    </p>
+                </div>
+
+                <div class="what-doing__text-section what-doing__text-section_left-text">
+                    <img src="images/services-web-corporate.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">КОРПОРАТИВНЫЙ САЙТ</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Корпоративный сайт – это лицо компании или бренда. Мы сделаем для этого все, что возможно с использованием инновационных решений.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Ваш корпоративный сайт станет лицом компании или продукта. С помощью корпоративного сайта Вы сможете наладить выгодные партнерские отношение, увеличить прибыль и найти новых клиентов.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Наши специалисты предложат несколько эффективных вариантов позиционирования компании продукта. Вместе мы выберем лучший, и после утверждения приступим к разработке.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_list">
+                        Цена - <em class="what-doing__paragraph-mark">от 700 $</em>
+                    </p>
+                    <a href="#" class="btn-blue-border">Заказать</a>
+                </div>
+
+                <div class="what-doing__text-section what-doing__text-section_right-text">
+                    <img src="images/services-web-commerce.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">ИНТЕРНЕТ МАГАЗИН</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Не ограничивайте свой рынок физическими размерами и охватите больше аудитории / клиентов в Интернете. Просто запустите свой электронный магазин.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        С помощью интернет-магазина Вы сможете продавать любые продукты и услуги.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Эффектный внешний вид, качественный контент, удобное меню – все это должен иметь прибыльный магазин. Перед разработкой, мы изучаем Ваш продукт, а также конкурентов, что дает возможность выделить Ваш интернет-магазин максимально выгодно на фоне других.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_list">
+                        Цена - <em class="what-doing__paragraph-mark">от 1000 $</em>
+
+                        <a href="#" class="btn-blue-border btn-blue-border_in-list">Заказать</a>
+                    </p>
+                </div>
+            </div>
+
+            <!--========== SEO ============-->
+            <div class="what-doing__text" id="seo-tab">
+                <div class="what-doing__text-section what-doing__text-section_left-text">
+                    <img src="images/services-seo-seo.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">ПРОДВИЖЕНИЕ</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Сайт, находящийся в ТОПе поисковой выдачи, закономерно привлекает больше клиентов. А чем больше на вашем ресурсе посетителей, тем больше ваша прибыль. Причем этот процесс становится стабильным, если текущие позиции сайта удерживаются профессионалами.
+                    </p>
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Стоит заказать продвижение сайта в поисковых системах, если вы хотите обеспечить стабильный прирост потока клиентов, монетизировать трафик, сделать свою компанию узнаваемой, востребованной и популярной. Профессионалы SEO разработают индивидуальную стратегию для вашего ресурса, что обеспечит оптимальный результат.
+                    </p>
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        На продвижение сайта цена включает не только оплату специалистов, но и затраты, связанные с аналитикой, тестированием.
+                    </p>
+                    <a href="#" class="btn-blue-border">Заполнить бриф</a>
+                </div>
+
+                <div class="what-doing__text-section what-doing__text-section_right-text">
+                    <img src="images/services-seo-hosting.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">РЕГИСТРАЦИЯ ДОМЕНА И ХОСТИНГА</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Домен — область иерархического пространства доменных имен интернета, которая указывается уникальным доменным именем. Доменное имя служит для адресации узлов интернета и расположенных на них ресурсов (сайтов, серверов электронной почты, проч. сервисов сети) в удобной для человека форме. Услуги по регистрации домена предоставляются при условии заказа разработки и создания сайта.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Доменное имя регистрируется на 1 календарный год, и по желанию Заказчика, после получения соответствующих уведомлений, может быть продлено путем внесения оплаты согласно выставленного Исполнителем счета.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Хостинг — это услуга размещения вашей информации (вашего сайта) на серверах, которые подключены к высокоскоростным каналам интернета круглосуточно. Услуги хостинг предоставляются при условии заказа разработки и создания сайта на серверах, которые находятся в лучших дата-центрах Украины (UA-IX) и России. Поэтому у вас есть возможность при заказе хостинга выбрать физическое расположение сервера для вашего сайта, исходя из ориентированности на посетителей.
+                    </p>
+
+
+                        <a href="#" class="btn-blue-border btn-blue-border_in-list">Заполнить бриф</a>
+
+                </div>
+
+                <div class="what-doing__text-section what-doing__text-section_left-text">
+                    <img src="images/services-seo-administration.png" alt="" class="what-doing__text-img">
+                    <h2 class="section-caption wow fadeInUp2">АДМИНИСТРИРОВАНИЕ и НАПОЛНЕНИЕ</h2>
+                    <hr class="wow fadeInUp2" data-wow-delay="0.8s">
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Казалось бы: проект запущен, трафик идет — цель достигнута.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Но это лишь первый этап развития проекта во Всемирной паутине. Далее следует ежедневная работа над продвижением и улучшением его эффективности. Стабильная прибыль — это регулярный труд над проектом. И техническая поддержка сайта играет в этом важную роль, обеспечивая доступное и качественное функционирование ресурса.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Наполнение сайта - это уникальная услуга по заполнению главных разделов сайта – тех, о которых обычно думают в последнюю очередь.
+                    </p>
+
+                    <p class="what-doing__paragraph what-doing__paragraph_no-title">
+                        Не теряйте ни дня без посетителей и продаж. Мы подготовим и разместим уникальные представительские тексты в разделы: «Главная», «О компании», «Услуги», «Ассортимент», «Цены», «Доставка», «Оплата», «Гарантии», “Контакты”.
+                    </p>
+
+                    <a href="#" class="btn-blue-border">Заполнить бриф</a>
+                </div>
+
             </div>
         </div>
     </section>
