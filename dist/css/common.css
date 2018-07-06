@@ -230,8 +230,8 @@ br.mobile_line-break {
   width: 55px;
   height: 55px;
   background-color: #fff;
-  -webkit-box-shadow: 0 0 22.9px 6.1px rgba(0, 0, 0, 0.13);
-          box-shadow: 0 0 22.9px 6.1px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0 0 22.9px 6.1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 22.9px 6.1px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   display: none;
   -webkit-transition: 0.5s;
